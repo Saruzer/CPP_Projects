@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 .vsidx
 
 .vs/CPP_Projects/FileContentIndex/29666dac-28dc-4867-8783-621988eb956d.vsidx
@@ -879,8 +875,7 @@ CTestTestfile.cmake
 _deps
 
 ##### C++
->>>>>>> 3796181 (added all files)
->>>>>>> e2f7436 (Add all files)
+
 # Prerequisites
 *.d
 
@@ -913,10 +908,7 @@ _deps
 *.exe
 *.out
 *.app
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
 
 # C/C++ binary extension file
 *.bin
@@ -975,9 +967,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Raspberry Pi Pico Object file
+# Raspberry Pi Pico Object files
 *.uf2
 # Raspberry Pi Pico disassembler file
 *.dis
->>>>>>> 3796181 (added all files)
->>>>>>> e2f7436 (Add all files)
+
