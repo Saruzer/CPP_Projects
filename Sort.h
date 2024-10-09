@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 template<typename T>
 void QuickSort(T arr[], int first, int last)

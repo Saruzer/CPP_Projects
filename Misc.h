@@ -1,3 +1,4 @@
+#pragma once
 #include <ctime>
 #include <iostream>
 static void Initialize(int arr[], const int size)
