@@ -127,9 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CPP_Projects.cpp" />
     <ClCompile Include="Misc.h" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SmartPointers.cpp" />
     <ClCompile Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>
