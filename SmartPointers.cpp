@@ -105,6 +105,7 @@ void UniquePtrTest() {
 class Person
 {
 private:
+	std::weak_ptr<Person> ptr;
 	int age = 0;
 	char name[20] = "NoName";
 public:
@@ -122,6 +123,9 @@ public:
 	~Person() 
 	{
 		std::cout << "Default Desrtuctor\n";
+	}
+	void MakePointToOtherPerson(std::shared_ptr<Person> person) {
+		ptr = person;
 	}
 };
 void SharedPtrTest() {
@@ -144,8 +148,41 @@ void SharedPtrTest() {
 	ptr3.reset();
 }
 #pragma endregion
+#pragma region Weak_ptr
+void WeakPtrTest() {
+
+	std::shared_ptr<Person> ptr1{ std::make_shared<Person>(22,"name")};
+	std::shared_ptr<Person> ptr2{ ptr1 };
+	std::weak_ptr<Person> weakPtr{ptr1};
+	std::cout << "Count: " << weakPtr.use_count() << std::endl;
+	std::cout << "Is expired: " << weakPtr.expired() << std::endl;
+	ptr1.reset();
+	std::cout << "Count: " << weakPtr.use_count() << std::endl;
+	std::cout << "Is expired: " << weakPtr.expired() << std::endl;
+	ptr2.reset();
+	std::cout << "Count: " << weakPtr.use_count() << std::endl;
+	std::cout << "Is expired: " << weakPtr.expired() << std::endl;
+	std::cout << "----------\n";
+	
+	std::shared_ptr<Person> ptr3{ std::make_shared<Person>(10,"name") };
+	std::cout << "Count ptr3: " << ptr3.use_count() << std::endl;
+	std::shared_ptr<Person> ptr4{ std::make_shared<Person>(12,"name") };
+	std::cout << "Count ptr3: " << ptr3.use_count() << std::endl;
+	std::cout << "Count ptr4: " << ptr3.use_count() << std::endl;
+
+	std::cout << "ptr3->MakePointToOtherPerson(ptr4);\n";
+	std::cout << "ptr4->MakePointToOtherPerson(ptr3);\n";
+	
+	ptr3->MakePointToOtherPerson(ptr4);
+	ptr4->MakePointToOtherPerson(ptr3);
+
+	std::cout << "Count ptr3: " << ptr3.use_count() << std::endl;
+	std::cout << "Count ptr4: " << ptr3.use_count() << std::endl;
+
+}
+#pragma endregion
 
 int main() {
-	SharedPtrTest();
+	WeakPtrTest();
 	return 0;
 }
