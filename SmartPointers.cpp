@@ -1,4 +1,5 @@
 #include <iostream>
+#pragma region Self Made Pointer
 class A {
 private:
 	/* Fields */
@@ -42,12 +43,69 @@ void Function() {
 
 	std::cout << "Function Ended\n";
 }
+#pragma endregion
+#pragma region Unique_ptr
+class MyClass 
+{
+public:
+	void Method(const char* text) const
+	{
+		std::cout << text;
+	}
+	MyClass() 
+	{
+		std::cout << "Constructor of MyClass\n";
+	}
+	~MyClass() 
+	{
+		std::cout << "Destructor of MyClass\n";
+	}
+};
+
+struct MyDeleter {
+	void operator()(int* ptr) {
+		std::cout << "Deleting ptr\n";
+		delete ptr;
+	}
+	void SAYHI() {
+		std::cout << "Hi(from deleter!)\n";
+	}
+};
+
+void UniquePtrTest() {
+	std::unique_ptr<int, MyDeleter> ptr1{ new int(5), MyDeleter() };
+	std::cout << "<std::move> ptr1 to ptr2\n";
+	std::unique_ptr<int, MyDeleter> ptr2{std::move(ptr1)};
+
+	std::unique_ptr<MyClass> ptr3{ new MyClass{} };
+	
+	ptr3->Method("Method called from ptr3\n");
+
+	if (ptr3) {
+		std::cout << "ptr3 pointer points to out object\n";
+	}
+	ptr3.get()->Method("Method called from ptr3.get()\n");
+
+	//Get Deleter
+	MyDeleter deleter;
+	deleter = ptr1.get_deleter();
+	deleter.SAYHI();
+	
+	//Release
+	MyClass* UsualPtr;
+	UsualPtr = ptr3.release();
+	UsualPtr->Method("Method called from UsualPtr\n");
+	delete UsualPtr;
+
+	//Reset
+	ptr2.reset();
+}
+#pragma endregion
+
 
 int main() {
-	
-	Function();
-	SmartPointer<int> smartPtr2(new int{5});
-	std::cout << *smartPtr2 << std::endl;
-	
+	std::cout << "Before\n";
+	UniquePtrTest();
+	std::cout << "After\n";
 	return 0;
 }
