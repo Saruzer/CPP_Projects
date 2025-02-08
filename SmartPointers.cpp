@@ -101,11 +101,51 @@ void UniquePtrTest() {
 	ptr2.reset();
 }
 #pragma endregion
+#pragma region Shared_ptr
+class Person
+{
+private:
+	int age = 0;
+	char name[20] = "NoName";
+public:
+	void SayHi() {
+		std::cout << "Hi!\n";
+	}
+	Person() 
+	{
+		std::cout << "Default Consrtuctor\n";
+	}
+	Person(int age, const char* name) : age(age), name("SomeName")
+	{
+		std::cout << "Age/Name Consrtuctor\n";
+	}
+	~Person() 
+	{
+		std::cout << "Default Desrtuctor\n";
+	}
+};
+void SharedPtrTest() {
+	Person* somePerson = new Person{10,"name"};
 
+	std::shared_ptr<Person> ptr1{somePerson};
+	std::shared_ptr<Person> ptr2{ptr1};
+	std::shared_ptr<Person> ptr3{ptr1};
+	
+	std::cout << ptr1 << std::endl;
+	std::cout << ptr2 << std::endl;
+	std::cout << ptr3 << std::endl;
+	std::cout << "-----------"  << std::endl;
+	ptr1.reset();
+	std::cout << ptr1 << std::endl;
+	std::cout << ptr2 << std::endl;
+	std::cout << ptr3 << std::endl;
+	ptr2.reset();
+	ptr3->SayHi();
+	ptr3.reset();
+}
+#pragma endregion
 
 int main() {
-	std::cout << "Before\n";
-	UniquePtrTest();
-	std::cout << "After\n";
+	SharedPtrTest();
 	return 0;
 }
