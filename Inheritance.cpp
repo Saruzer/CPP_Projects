@@ -202,6 +202,7 @@ public:
 	C(int a, int b) { std::cout << "C::C(int a, int b)\n"; }
 	C(const C& other) { std::cout << "C::C(const C& other)\n"; }
 	C(C&& other) { std::cout << "C::C(C&& other)\n"; }
+	void operator=(const C& other) { std::cout << "operator=(const C& other)\n"; }
 };
 
 class D : public C 
@@ -212,6 +213,8 @@ public:
 	D(int a, int b) : C(a,b) { std::cout << "D::D(int a, int b)\n"; }
 	D(const D& other) : C(other) { std::cout << "D::D(const D& other)\n"; }
 	D(D&& other) : C(std::move(other)) { std::cout << "D::D(D&& other)\n"; }
+	void operator=(const D& other) { C::operator=(other); std::cout << "operator=(const D& other)\n"; }
+
 };
 void CDTest4InheritanceConstructor() {
 
@@ -221,10 +224,14 @@ void CDTest4InheritanceConstructor() {
 	D object3(5);
 	D object4;
 
+	object4 = object2;
+	
 	D object5(std::move(object2));
 	D object6(object3);
 
 	C object7(object3);
+	object0 = object1;
+
 
 }
 void Test4InheritanceConstructor() {
