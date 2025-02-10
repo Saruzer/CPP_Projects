@@ -127,8 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Inheritance.cpp" />
     <ClCompile Include="Misc.h" />
+    <ClCompile Include="Polymorphism.cpp" />
     <ClCompile Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>
