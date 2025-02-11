@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Abstraction.cpp" />
+    <ClCompile Include="Casts.cpp" />
     <ClCompile Include="Misc.h" />
     <ClCompile Include="Sort.h" />
   </ItemGroup>
