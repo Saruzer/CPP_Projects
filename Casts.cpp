@@ -68,12 +68,67 @@ void Static_CastTest()
 }
 
 #pragma endregion
+#pragma region 2. dynamic_cast
+namespace DynamicCast
+{
+
+	class Vehicle {
+	private:
+		// як≥сь загальн≥ пол€ дл€ транспорт≥в
+	public:
+		virtual ~Vehicle() = default;
+	};
+
+	class Apple : public Vehicle { };
+
+	class Car : public Vehicle {
+	public:
+		void Drive() { std::cout << "Car is driving!\n"; }
+
+	};
+	class Bike : public Vehicle {
+	public:
+		void Pedal() { std::cout << "Bike is pedaling!\n"; }
+	};
+}
+
+void Dynamic_CastTestVehicle(DynamicCast::Vehicle** v, size_t size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		DynamicCast::Car* car = dynamic_cast<DynamicCast::Car*>(v[i]);
+		DynamicCast::Bike* bike = dynamic_cast<DynamicCast::Bike*>(v[i]);
+		if (car != nullptr) {
+			car->Drive();
+		}
+		else if (bike != nullptr) {
+			bike->Pedal();
+		}
+		else {
+			std::cout << "Unknown vehicle\n";
+		}
+	}
+}
+void Dynamic_CastTest()
+{
+	DynamicCast::Car car1;
+	DynamicCast::Car car2;
+	DynamicCast::Bike bike;
+	DynamicCast::Apple APPLE;
+
+	DynamicCast::Car* car1Ptr = &car1;
+	DynamicCast::Car* car2Ptr = &car2;
+	DynamicCast::Bike* bikePtr = &bike;
+	DynamicCast::Apple* APPLEPtr = &APPLE;
+
+	DynamicCast::Vehicle* v[4] = { car1Ptr ,bikePtr,car2Ptr,APPLEPtr };
+	Dynamic_CastTestVehicle(v, 4);
+}
+#pragma endregion
 
 
 
 int main() {
-
-	Static_CastTest();
-	
+	Dynamic_CastTest();
 	return 0;
 }
