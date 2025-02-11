@@ -1,4 +1,5 @@
 #include<iostream>
+#include<Windows.h>
 #pragma region 1.static_cast
 namespace StaticCast
 {
@@ -68,7 +69,7 @@ void Static_CastTest()
 }
 
 #pragma endregion
-#pragma region 2. dynamic_cast
+#pragma region 2.dynamic_cast
 namespace DynamicCast
 {
 
@@ -125,10 +126,27 @@ void Dynamic_CastTest()
 	Dynamic_CastTestVehicle(v, 4);
 }
 #pragma endregion
+#pragma region 3.const_cast
+const int evil = 42;
+
+namespace ConstCast
+{
+	
+}
+void Const_castTest()
+{
+	const int var = 100;
+	std::cout << var << std::endl;
+	int* ptr = const_cast<int*>(&var);
+	*ptr = 0;
+	std::cout << var << std::endl;
+
+}
+#pragma endregion
 
 
 
 int main() {
-	Dynamic_CastTest();
+	Const_castTest();
 	return 0;
 }
