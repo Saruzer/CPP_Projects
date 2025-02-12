@@ -127,9 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Casts.cpp" />
     <ClCompile Include="Misc.h" />
     <ClCompile Include="Sort.h" />
+    <ClCompile Include="Typeidcpp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h" />
