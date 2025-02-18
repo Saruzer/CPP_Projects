@@ -127,12 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ADT\Singly-Linked_List.cpp" />
+    <ClCompile Include="ADT\main.cpp" />
     <ClCompile Include="Misc.h" />
     <ClCompile Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ADT\List.h" />
+    <ClInclude Include="ADT\Binary tree\BinaryTree.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
