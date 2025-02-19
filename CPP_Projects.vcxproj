@@ -127,9 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Lambda.cpp" />
     <ClCompile Include="Misc.h" />
     <ClCompile Include="Sort.h" />
+    <ClCompile Include="VariadicTemplates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h" />
