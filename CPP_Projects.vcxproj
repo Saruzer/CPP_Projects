@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cmath.cpp" />
+    <ClCompile Include="Lambda.cpp" />
     <ClCompile Include="Misc.h" />
     <ClCompile Include="Sort.h" />
   </ItemGroup>
