@@ -21,7 +21,7 @@
     <ClCompile Include="Sort.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="VariadicTemplates.cpp">
+    <ClCompile Include="STL\vector\Vector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
