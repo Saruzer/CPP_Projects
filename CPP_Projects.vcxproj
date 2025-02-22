@@ -129,7 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Misc.h" />
     <ClCompile Include="Sort.h" />
-    <ClCompile Include="STL\set\Set.cpp" />
+    <ClCompile Include="STL\map\map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h" />
