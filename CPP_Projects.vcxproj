@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="callocmallocfreerealloc.cpp" />
+    <ClCompile Include="Files.cpp" />
     <ClCompile Include="Misc.h" />
     <ClCompile Include="Sort.h" />
   </ItemGroup>

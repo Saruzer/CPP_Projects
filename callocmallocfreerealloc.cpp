@@ -59,6 +59,5 @@ void realloc()
 }
 int main()
 {
-	realloc();
 	return 0;
 }
