@@ -127,9 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Manipulators.cpp" />
     <ClCompile Include="Misc.h" />
     <ClCompile Include="Sort.h" />
-    <ClCompile Include="STL\map\map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h" />
