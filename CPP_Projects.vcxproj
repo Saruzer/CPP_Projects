@@ -127,8 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Manipulators.cpp" />
     <ClCompile Include="Misc.h" />
+    <ClCompile Include="rand.cpp" />
     <ClCompile Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>

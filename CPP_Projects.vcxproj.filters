@@ -21,7 +21,7 @@
     <ClCompile Include="Sort.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Manipulators.cpp">
+    <ClCompile Include="rand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
