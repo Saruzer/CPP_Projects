@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Files.cpp" />
+    <ClCompile Include="algorithms.cpp" />
     <ClCompile Include="Misc.h" />
     <ClCompile Include="Sort.h" />
   </ItemGroup>

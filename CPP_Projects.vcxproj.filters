@@ -21,7 +21,7 @@
     <ClCompile Include="Sort.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Files.cpp">
+    <ClCompile Include="algorithms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
