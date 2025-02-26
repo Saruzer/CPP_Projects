@@ -21,7 +21,7 @@
     <ClCompile Include="Sort.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="parallelism\thread.cpp">
+    <ClCompile Include="parallelism\mutex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
