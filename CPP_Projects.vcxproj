@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Misc.h" />
-    <ClCompile Include="parallelism\mutex.cpp" />
+    <ClCompile Include="parallelism\atomic.cpp" />
     <ClCompile Include="Sort.h" />
   </ItemGroup>
   <ItemGroup>
